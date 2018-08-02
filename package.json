@@ -1,0 +1,19 @@
+{
+  "name": "shorturl",
+  "version": "1.0.0",
+  "description": "A freecodecamp project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yapanss/UrlShortener.git"
+  },
+  "author": "Assi Yapo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yapanss/UrlShortener/issues"
+  },
+  "homepage": "https://github.com/yapanss/UrlShortener#readme"
+}
