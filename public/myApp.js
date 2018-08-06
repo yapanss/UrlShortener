@@ -2,16 +2,17 @@ $(document).ready(() =>{
 	$('button').click((e) => {
 		e.preventDefault();
 		// alert('bonjour');
+		var urle = $('#url').val();
+		// var urll = new URL(urle);
+		// console.log(urll)
 		var data = {
-			fullUrl: document.forms[0].elements["url"].value,
-			short: 5
-		}
+			fullUrl: urle
+		};
 		$.post( "/api/shorturl/new", data)
 		.then((result) => {
-			alert(JSON.stringify(result))
+			alert(JSON.stringify(result));
 		});
 
 		// alert(data);
-
 	})
 })

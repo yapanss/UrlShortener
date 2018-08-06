@@ -1,8 +1,35 @@
-.container {
-  margin-top: 50px;
+body  {
   background-color: silver;
 }
 
-/*#url {
-  width: 100%;
-}*/
+.container {
+  margin-top: 150px;
+  /*background-color: silver;*/
+  /*background-color: #B1E6F6FF;*/
+  
+}
+
+section {
+  border: solid black 1px;
+  border-radius: 5px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-left: 10%;
+  width: 75%;
+  padding: 20px;
+}
+
+#url {
+  font-size: 1.3em;
+  color: darkblue;
+}
+
+label {
+  color: darkblue;
+  font-size: 1.3em;
+  margin-left: 15%;
+}
+
+.btn {
+  font-size: 1.1em;
+}
