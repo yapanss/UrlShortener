@@ -4,7 +4,7 @@
   "description": "A freecodecamp project",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/yapanss/UrlShortener/issues"
   },
-  "homepage": "https://github.com/yapanss/UrlShortener#readme"
+  "homepage": "https://github.com/yapanss/UrlShortener#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "lodash": "^4.17.10",
+    "mongodb": "^3.1.1",
+    "mongoose": "^5.2.6"
+  }
 }
