@@ -1,5 +1,6 @@
 'use strict';
 
+require('dotenv').config();
 var express = require('express');
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
@@ -15,7 +16,7 @@ var app = express();
 var port = process.env.PORT || 3000;
 
 /** this project needs a db !! **/ 
- mongoose.connect('mongodb://yapanss:11Braves@ds157901.mlab.com:57901/fcc_mongodb', {
+ mongoose.connect((process.env.MONGO_URI), {
  	useNewUrlParser: true
  }).then(() => {
      console.log('Database connection successful')
@@ -40,7 +41,7 @@ app.use(bodyParser.json());
 app.use('/public', express.static(process.cwd() + '/public'));
 
 app.get('/', function(req, res){
-  res.sendFile(process.cwd() + '/views/index.html');
+  res.sendFile(__dirname + '/views/index.html');
 });
 
 
@@ -67,8 +68,8 @@ app.get("/api/shorturl/:num", function (req, res) {
 app.post("/api/shorturl/new", (req, res) => {
 
 	var short = new ShortUrl();
-	var fullUrl = url.parse(req.body.fullUrl, true);
-  	var match = fullUrl.href == req.body.fullUrl;
+	var fullUrl = url.parse(req.body.url, true);
+  	var match = fullUrl.href == req.body.url;
   	var protoc = /http(s)?/ ;
 
   	if(!fullUrl.protocol || !(fullUrl.protocol.match(protoc)) && !(fullUrl.slashes)) {
@@ -83,11 +84,11 @@ app.post("/api/shorturl/new", (req, res) => {
 				console.log(err)
 			} else {
 				if(doc.length == 0) {
-					short.fullUrl = req.body.fullUrl;
+					short.fullUrl = req.body.url;
 					short.shortUrl = 1;
 				} else {
 						_.sortBy(doc, ['shortUrl']);
-						short.fullUrl = req.body.fullUrl;
+						short.fullUrl = req.body.url;
 						short.shortUrl = doc[doc.length-1].shortUrl + 1;
 				  }
 			 	short.save((err) => {

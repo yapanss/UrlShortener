@@ -12,11 +12,11 @@
    <body>
     <div class="container">
       <section>
-       <form mt-5>
+       <form action="api/shorturl/new" method="POST">
         <div class="form-inline">
           <label for="url" class="form-label mr-2 ">Url To Be Shortened</label>
           <input type="url" name="url" id="url" class="form-control mr-1" required>
-          <button class="btn btn-primary mt-1">Submit</button>
+          <button class="btn btn-primary mt-1" type="submit">Submit</button>
         </div>
       </form>
     </section>
